@@ -51,5 +51,5 @@ sudo cp -r php56/ /opt/local/etc/php56/ && port load php56-fpm
 sudo cp -r nginx/ /opt/local/etc/nginx/ && port load nginx
 mkdir ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
 echo "<?php phpinfo();" >> ~/Sites/php.lo/index.php
-echo "127.0.0.1    php.lo" | sudo tee --append /etc/hosts
+echo "127.0.0.1    php.lo" | sudo tee -a /etc/hosts
 ```
