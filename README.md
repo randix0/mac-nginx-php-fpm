@@ -41,7 +41,7 @@ git clone https://github.com/randix0/mac-nginx-php-fpm.git .
 - nginx/sites-enabled/auto_ssl.conf.dist (rename to .conf to enable)
 - nginx/sites-enabled/root.conf.dist (rename to .conf to enable)
 
-## 5. Deploy configs and load deamons (PHP 5.6 is used for example):
+## 5. Deploy configs and load daemons (PHP 5.6 is used for example):
 ```sh
 sudo mkdir -p -m 777 /var/log/nginx /var/log/xdebug /var/log/php
 sudo cp mysql57/my.cnf /opt/local/etc/mysql57/my.cnf && port unload mysql57-server && port load mysql57-server
