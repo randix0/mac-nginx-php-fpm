@@ -1,0 +1,35 @@
+server {
+	listen 80;
+	server_name 127.0.0.1 localhost ydenyshchenk;
+	access_log /var/log/nginx/root.access.log;
+	error_log /var/log/nginx/root.error.log;
+	location ~ /\.ht {
+		deny all;
+	}
+
+	# for php5-fpm
+	root /Users/ydenyshchenk/Sites/;
+	index index.html index.php;
+	if ( !-e $request_filename ) {
+		rewrite (/|\.php|\.html|\.htm|\.feed|\.pdf|\.raw|/[^.]*)$ /supee-4979.lo/index.php last;
+		break;
+	}
+
+	location /pub/static {
+		rewrite ^/pub/static/(.*)$ /pub/static.php?resource=$1? last;
+	}
+
+	location /staging/(.*) {
+		index index.php;		 
+	}
+
+	location /supee-4979.lo/ {
+                index index.php;
+	}
+
+	location ~ \.php$ {
+		fastcgi_param  SCRIPT_FILENAME  /Users/ydenyshchenk/Sites/$fastcgi_script_name;
+		include fastcgi_params;
+	}
+} 
+
