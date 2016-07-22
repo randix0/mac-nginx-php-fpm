@@ -28,7 +28,7 @@ server {
 	}
 
 	location ~ \.php$ {
-		fastcgi_param  SCRIPT_FILENAME  /Users/ydenyshchenk/Sites/$fastcgi_script_name;
+		fastcgi_param  SCRIPT_FILENAME  /Users/ydenyshchenk/Sites/$host/$fastcgi_script_name;
 		include fastcgi_params;
 	}
 } 
