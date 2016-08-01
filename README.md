@@ -48,8 +48,8 @@ sudo cp mysql57/my.cnf /opt/local/etc/mysql57/my.cnf && port unload mysql57-serv
 sudo cp xdebug/xdebug-extra.ini /opt/local/var/db/php56/
 sudo chmod +x sendmail/fake_sendmail.sh && cp sendmail/fake_sendmail.sh /opt/local/bin/
 mkdir -p ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
-sudo cp -r php56/ /opt/local/etc/php56/ && port load php56-fpm
-sudo cp -r nginx/ /opt/local/etc/nginx/ && port load nginx
+sudo cp -r php56/ /opt/local/etc/php56/ && sudo port load php56-fpm
+sudo cp -r nginx/ /opt/local/etc/nginx/ && sudo port load nginx
 echo "<?php phpinfo();" >> ~/Sites/php.lo/index.php
 echo "127.0.0.1    php.lo" | sudo tee -a /etc/hosts
 curl -I http://php.lo/
