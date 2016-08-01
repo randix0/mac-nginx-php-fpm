@@ -47,9 +47,10 @@ sudo mkdir -p -m 777 /var/log/nginx /var/log/xdebug /var/log/php
 sudo cp mysql57/my.cnf /opt/local/etc/mysql57/my.cnf && port unload mysql57-server && port load mysql57-server
 sudo cp xdebug/xdebug-extra.ini /opt/local/var/db/php56/
 sudo chmod +x sendmail/fake_sendmail.sh && cp sendmail/fake_sendmail.sh /opt/local/bin/
+mkdir -p ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
 sudo cp -r php56/ /opt/local/etc/php56/ && port load php56-fpm
 sudo cp -r nginx/ /opt/local/etc/nginx/ && port load nginx
-mkdir ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
 echo "<?php phpinfo();" >> ~/Sites/php.lo/index.php
 echo "127.0.0.1    php.lo" | sudo tee -a /etc/hosts
+curl -I http://php.lo/
 ```
