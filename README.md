@@ -47,7 +47,7 @@ git clone https://github.com/randix0/mac-nginx-php-fpm.git .
 ## 5. Deploy configs and load daemons (PHP 5.6 is used for example):
 ```sh
 sudo mkdir -p -m 777 /var/log/nginx /var/log/xdebug /var/log/php
-sudo cp mysql57/my.cnf /opt/local/etc/mysql57/my.cnf && port unload mysql57-server && port load mysql57-server
+sudo cp mysql57/my.cnf /opt/local/etc/mysql57/my.cnf && sudo port unload mysql57-server && sudo port load mysql57-server
 sudo cp xdebug/xdebug-extra.ini /opt/local/var/db/php56/
 sudo chmod +x sendmail/fake_sendmail.sh && cp sendmail/fake_sendmail.sh /opt/local/bin/
 mkdir -p ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
