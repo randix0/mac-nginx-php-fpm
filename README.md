@@ -1,6 +1,9 @@
 # Nginx/Mysql/PHP-fpm config-pack for macOS and install steps for [MacPorts](https://www.macports.org/):
 
-## 0. Install [MacPorts](https://www.macports.org/), run selfupdate
+## 0. Install [MacPorts](https://www.macports.org/), run selfupdate; open Terminal.app preferences, select Command and set:
+```sh
+/opt/local/bin/bash -l
+```
 
 ## 1. Install git, nginx, mysql57 and php-pack:
 ### 1.1. PHP 5.5:
@@ -50,6 +53,7 @@ sudo chmod +x sendmail/fake_sendmail.sh && cp sendmail/fake_sendmail.sh /opt/loc
 mkdir -p ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
 sudo cp -r php56/ /opt/local/etc/php56/ && sudo port load php56-fpm
 sudo cp -r nginx/ /opt/local/etc/nginx/ && sudo port load nginx
+printf "if [ -f /opt/local/share/bash-completion/bash_completion ]; then \n . /opt/local/share/bash-completion/bash_completion \n fi" >> ~/.profile
 echo "<?php phpinfo();" >> ~/Sites/php.lo/index.php
 echo "127.0.0.1    php.lo" | sudo tee -a /etc/hosts
 curl -I http://php.lo/
