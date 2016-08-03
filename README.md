@@ -54,6 +54,12 @@ mkdir -p ~/Sites/php.lo/ && touch ~/Sites/php.lo/index.php
 sudo cp -r php56/ /opt/local/etc/php56/ && sudo port load php56-fpm
 sudo cp -r nginx/ /opt/local/etc/nginx/ && sudo port load nginx
 printf "if [ -f /opt/local/share/bash-completion/bash_completion ]; then \n . /opt/local/share/bash-completion/bash_completion \n fi" >> ~/.profile
+sudo ln -s /opt/local/bin/php56 /usr/local/bin/php
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo chmod +x ./composer.phar && mv ./composer.phar /opt/local/bin/composer
 echo "<?php phpinfo();" >> ~/Sites/php.lo/index.php
 echo "127.0.0.1    php.lo" | sudo tee -a /etc/hosts
 curl -I http://php.lo/
