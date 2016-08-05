@@ -6,15 +6,23 @@
 ```
 
 ## 1. Install git, nginx, mysql57 and php-pack:
-### 1.1. PHP 5.5:
+### 1.1. PHP 5.3:
+```sh
+sudo port install git +bash_completion nginx mysql57-server memcached redis php53 php53-curl php53-fpm php53-xsl php53-zip php53-openssl php53-mysql php53-mbstring php53-iconv php53-intl php53-mcrypt php53-gd php53-APCu php53-memcache php53-memcached php53-oauth php53-soap php53-xdebug php53-zip
+```
+### 1.2. PHP 5.4:
+```sh
+sudo port install git +bash_completion nginx mysql57-server memcached redis php54 php54-curl php54-fpm php54-xsl php54-zip php54-openssl php54-mysql php54-mbstring php54-iconv php54-intl php54-mcrypt php54-gd php54-APCu php54-memcache php54-memcached php54-oauth php54-soap php54-xdebug php54-zip
+```
+### 1.3. PHP 5.5:
 ```sh
 sudo port install git +bash_completion nginx mysql57-server memcached redis php55 php55-curl php55-fpm php55-xsl php55-zip php55-openssl php55-mysql php55-mbstring php55-iconv php55-intl php55-mcrypt php55-gd php55-APCu php55-memcache php55-memcached php55-oauth php55-soap php55-xdebug php55-zip
 ```
-### 1.2. PHP 5.6:
+### 1.4. PHP 5.6:
 ```sh
 sudo port install git +bash_completion nginx mysql57-server memcached redis php56 php56-curl php56-fpm php56-xsl php56-zip php56-openssl php56-mysql php56-mbstring php56-iconv php56-intl php56-mcrypt php56-gd php56-APCu php56-memcache php56-memcached php56-oauth php56-soap php56-xdebug php56-zip
 ```
-### 1.3. PHP 7.0:
+### 1.5. PHP 7.0:
 ```sh
 sudo port install git +bash_completion nginx mysql57-server memcached redis php70 php70-curl php70-fpm php70-xsl php70-zip php70-openssl php70-mysql php70-mbstring php70-iconv php70-intl php70-mcrypt php70-gd php70-APCu php70-memcache php70-memcached php70-oauth php70-soap php70-xdebug php70-zip
 ```
